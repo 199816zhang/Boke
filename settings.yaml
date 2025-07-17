@@ -4,6 +4,10 @@ system:
 log:
   app: blogx_server
   dir: logs
+jwt:
+  secret: secret
+  expire: 3
+  issuer: zh
 db:
   host: 127.0.0.1
   port: 3306
