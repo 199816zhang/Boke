@@ -24,3 +24,7 @@ db1:
   db: blogx
   source: mysql
   debug: false
+redis:
+  addr: 127.0.0.1:6379
+  password: ""
+  db: 2

@@ -12,7 +12,7 @@ func main() {
 	flags.Parse()
 	global.Config = core.ReadConf()
 	core.InitLogrus()
-	token, err := jwt.GetToken(jwt.Claims{
+	token, err := jwts.GetToken(jwts.Claims{
 		UserID:   1,
 		Username: "zhangheng",
 		Role:     2,
@@ -22,7 +22,7 @@ func main() {
 	}
 	fmt.Println(token)
 
-	mycla, err := jwt.ParseToken(token)
+	mycla, err := jwts.ParseToken(token)
 	if err != nil {
 		return
 	}

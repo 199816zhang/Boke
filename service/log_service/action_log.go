@@ -197,7 +197,7 @@ func (ac *ActionLog) Save() (id uint) {
 
 	ip := ac.c.ClientIP()
 	addr := core.GetIpAddr(ip)
-	byGin, err := jwt.ParseTokenByGin(ac.c)
+	byGin, err := jwts.ParseTokenByGin(ac.c)
 	if err != nil {
 		return 0
 	}
