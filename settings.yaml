@@ -4,3 +4,19 @@ system:
 log:
   app: blogx_server
   dir: logs
+db:
+  host: 127.0.0.1
+  port: 3306
+  user: root
+  password: 123456
+  db: blogx
+  source: mysql
+  debug: false
+db1:
+  host: 127.0.0.1
+  port: 3306
+  user: root
+  password: 123456
+  db: blogx
+  source: mysql
+  debug: false
