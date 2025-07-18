@@ -17,7 +17,16 @@ upload:
     - webp
     - gif
   uploadDir: image
-
+qiNiu:
+  enable: true
+  accessKey: _jkOeY4joRduqaoTXliBNOyO2dFIrT4X6WxIIjGG
+  secretKey: iKmeH1OZyVNOOYm2FB0K05cxyw8gBHuMH2wNcXpd
+  bucket: zhdeblog
+  uri: https://szlbam6vv.hn-bkt.clouddn.com
+  region: z2
+  prefix: blogx
+  size: 3
+  expiry: 60
 db:
   host: 127.0.0.1
   port: 3306
