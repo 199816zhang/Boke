@@ -7,3 +7,6 @@ type Model struct {
 	CreatedAt time.Time `json:"createdAt"`
 	UpdatedAt time.Time `json:"updatedAt"`
 }
+type RemoveRequest struct {
+	IDList []uint `json:"idList"`
+}

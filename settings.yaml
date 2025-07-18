@@ -8,6 +8,16 @@ jwt:
   secret: secret
   expire: 3
   issuer: zh
+upload:
+  size: 3
+  whiteList:
+    - jpg
+    - jpeg
+    - png
+    - webp
+    - gif
+  uploadDir: image
+
 db:
   host: 127.0.0.1
   port: 3306

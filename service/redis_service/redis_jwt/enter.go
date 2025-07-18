@@ -3,7 +3,7 @@ package redis_jwt
 
 import (
 	"blogx_server/global"
-	"blogx_server/utils/jwts"
+	"blogx_server/utils/jwt"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
@@ -48,7 +48,7 @@ func ParseBlackType(val string) BlackType {
 func TokenBlack(token string, value BlackType) { //将指定的 Token 加入 Redis 黑名单，并设置黑名单类型
 	key := fmt.Sprintf("token_black_%s", token)
 
-	claims, err := jwts.ParseToken(token)
+	claims, err := jwt.ParseToken(token)
 	if err != nil || claims == nil {
 		logrus.Errorf("token解析失败 %s", err)
 		return

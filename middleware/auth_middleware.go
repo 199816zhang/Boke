@@ -5,13 +5,13 @@ import (
 	"blogx_server/common/res"
 	"blogx_server/models/enum"
 	"blogx_server/service/redis_service/redis_jwt"
-	"blogx_server/utils/jwts"
+	"blogx_server/utils/jwt"
 	"github.com/gin-gonic/gin"
 )
 
 //在 API 请求到达实际的业务处理函数之前，验证用户的身份和权限
 func AuthMiddleware(c *gin.Context) {
-	claims, err := jwts.ParseTokenByGin(c)
+	claims, err := jwt.ParseTokenByGin(c)
 	//这是认证的第一步，验证请求中是否包含有效的 token，并从中提取用户信息
 	if err != nil {
 		res.FailWithError(err, c)
@@ -36,7 +36,7 @@ func AuthMiddleware(c *gin.Context) {
 
 //在 API 请求到达管理员专用的业务处理函数之前，不仅验证用户的身份，还验证用户是否具有管理员角色
 func AdminMiddleware(c *gin.Context) {
-	claims, err := jwts.ParseTokenByGin(c)
+	claims, err := jwt.ParseTokenByGin(c)
 	if err != nil {
 		res.FailWithError(err, c)
 		c.Abort()

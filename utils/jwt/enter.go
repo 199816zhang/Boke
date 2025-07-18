@@ -1,4 +1,4 @@
-package jwts
+package jwt
 
 import (
 	"blogx_server/global"

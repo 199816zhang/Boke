@@ -10,7 +10,7 @@ import (
 )
 
 func NewLoginSuccess(c *gin.Context, loginType enum.LoginType) {
-	claims, err := jwts.ParseTokenByGin(c)
+	claims, err := jwt.ParseTokenByGin(c)
 	if err != nil {
 		return
 	}
